@@ -58,7 +58,7 @@ const App = () => {
                                     📍 Gauteng & Limpopo
                                 </div>
                                 <h1 className="display-4 fw-black mb-3" style={{ color: darkPurple }}>Mobile Car Diagnostics & Scanning.</h1>
-                                <p className="lead mb-4 text-muted fs-5">Professional vehicle fault clearing at your doorstep. Based in <strong>Germiston</strong>, visiting <strong>Venda</strong> during June & December.</p>
+                                <p className="lead mb-4 text-muted fs-5">Professional vehicle fault clearing at your doorstep. Based in <strong>Dikweipi 2 via 510, Germiston</strong>, visiting <strong>Venda</strong> during June & December.</p>
 
                                 <div className="d-grid d-lg-flex gap-2">
                                     <a href={waLink} className="btn btn-lg px-lg-5 py-3 fw-bold rounded-pill text-white shadow" style={{ backgroundColor: primaryPurple }}>Book a Scan</a>
@@ -126,11 +126,11 @@ const App = () => {
                                     <div className="card-body p-4 p-lg-5">
                                         <div className="display-4 fw-black mb-1" style={{ color: darkPurple }}>R350</div>
                                         <p className="text-muted mb-4 fw-bold small text-uppercase tracking-widest">Per Session</p>
-                                        <p className="mb-4 lead">We Come To You (Call-Out Included)</p>
+                                        <p className="mb-4 lead">Mobile Service Available (See T&Cs)</p>
                                         <ul className="list-unstyled text-start mb-5 mx-auto" style={{ maxWidth: '350px' }}>
                                             <li className="mb-2 fs-5">✅ Full System Scan</li>
                                             <li className="mb-2 fs-5">✅ Fault Code Clearing</li>
-                                            <li className="mb-2 fs-5">✅ Oil & Brake Resets</li>
+                                            <li className="mb-2 fs-5 :">✅ Oil & Brake Resets</li>
                                             <li className="mb-2 fs-5">✅ Detailed Fault Report</li>
                                         </ul>
                                         <a href={waLink} className="btn btn-dark w-100 py-3 fw-bold rounded-pill btn-lg shadow">
@@ -148,13 +148,16 @@ const App = () => {
                     <div className="container">
                         <div className="row g-4 align-items-center">
                             <div className="col-md-6 text-center text-md-start">
-                                <h3 className="fw-bold" style={{ color: darkPurple }}>Where to find us:</h3>
-                                <p className="text-muted">Mobile diagnostics at your home, office, or roadside.</p>
+                                <h3 className="fw-bold" style={{ color: darkPurple }}>Our Locations:</h3>
+                                <p className="text-muted">We have a base in Gauteng and provide seasonal mobile support in Limpopo.</p>
                             </div>
                             <div className="col-md-6">
                                 <ul className="list-group list-group-flush shadow-sm rounded-4 overflow-hidden">
                                     <li className="list-group-item d-flex justify-content-between align-items-center py-3">
-                                        <strong>Gauteng (Germiston)</strong>
+                                        <div>
+                                            <strong>Gauteng (Germiston)</strong><br/>
+                                            <small className="text-muted">Dikweipi 2 via 510</small>
+                                        </div>
                                         <span className="badge rounded-pill bg-success">Available Now</span>
                                     </li>
                                     <li className="list-group-item d-flex justify-content-between align-items-center py-3">
@@ -162,6 +165,26 @@ const App = () => {
                                         <span className="badge rounded-pill" style={{backgroundColor: primaryPurple}}>June & Dec Only</span>
                                     </li>
                                 </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* --- TERMS & CONDITIONS SECTION --- */}
+                <section id="terms" className="py-5" style={{ backgroundColor: "#f1f1f1" }}>
+                    <div className="container">
+                        <div className="row justify-content-center">
+                            <div className="col-lg-8">
+                                <div className="p-4 bg-white rounded shadow-sm">
+                                    <h4 className="fw-bold mb-3" style={{ color: darkPurple }}>Terms & Conditions</h4>
+                                    <ul className="small text-muted" style={{ lineHeight: '1.6' }}>
+                                        <li><strong>Service Fee:</strong> The R350 fee covers one full diagnostic session and fault clearing.</li>
+                                        <li><strong>Call-Out Policy:</strong> We come to you; however, a travel fee may apply depending on your distance from our base in Dikweipi 2 via 510.</li>
+                                        <li><strong>Bookings:</strong> Mobile service is subject to availability and must be confirmed via WhatsApp or Phone call.</li>
+                                        <li><strong>Diagnosis Only:</strong> Our service is for electronic diagnostics and resetting. Physical mechanical repairs are charged separately if applicable.</li>
+                                        <li><strong>Payment:</strong> Payment is due immediately upon completion of the diagnostic session.</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
