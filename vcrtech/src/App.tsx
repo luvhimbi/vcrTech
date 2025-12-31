@@ -65,15 +65,13 @@ const App = () => {
                                     <a href={`tel:${waNumber}`} className="btn btn-outline-dark btn-lg px-lg-5 py-3 rounded-pill d-lg-none">Call Now</a>
                                 </div>
                             </div>
-                            <div className="col-lg-6">
-                                <div className="position-relative px-2 text-center">
-                                    <img
-                                        src="/assets/main.jfif"
-                                        alt="Car Diagnostic Scanning"
-                                        className="img-fluid rounded-4 shadow-lg border border-white border-4"
-                                        style={{ aspectRatio: '4/3', objectFit: 'cover', width: '100%', maxHeight: '350px' }}
-                                    />
-                                </div>
+                            <div className="col-lg-6 text-center">
+                                <img
+                                    src="/assets/main.jfif"
+                                    alt="Car Diagnostic Scanning"
+                                    className="img-fluid rounded-4 shadow-lg border border-white border-4"
+                                    style={{ aspectRatio: '4/3', objectFit: 'cover', width: '100%', maxHeight: '350px' }}
+                                />
                             </div>
                         </div>
                     </div>
@@ -126,11 +124,11 @@ const App = () => {
                                     <div className="card-body p-4 p-lg-5">
                                         <div className="display-4 fw-black mb-1" style={{ color: darkPurple }}>R350</div>
                                         <p className="text-muted mb-4 fw-bold small text-uppercase tracking-widest">Per Session</p>
-                                        <p className="mb-4 lead">Mobile Service Available (See T&Cs)</p>
+                                        <p className="mb-4 lead">Professional Mobile Service</p>
                                         <ul className="list-unstyled text-start mb-5 mx-auto" style={{ maxWidth: '350px' }}>
                                             <li className="mb-2 fs-5">✅ Full System Scan</li>
                                             <li className="mb-2 fs-5">✅ Fault Code Clearing</li>
-                                            <li className="mb-2 fs-5 :">✅ Oil & Brake Resets</li>
+                                            <li className="mb-2 fs-5">✅ Oil & Brake Resets</li>
                                             <li className="mb-2 fs-5">✅ Detailed Fault Report</li>
                                         </ul>
                                         <a href={waLink} className="btn btn-dark w-100 py-3 fw-bold rounded-pill btn-lg shadow">
@@ -143,49 +141,45 @@ const App = () => {
                     </div>
                 </section>
 
-                {/* --- SERVICE AREAS SECTION --- */}
-                <section className="py-5 bg-white border-top">
+                {/* --- NEW DESIGNED TERMS & CONDITIONS --- */}
+                <section id="terms" className="py-5 bg-white border-top">
                     <div className="container">
-                        <div className="row g-4 align-items-center">
-                            <div className="col-md-6 text-center text-md-start">
-                                <h3 className="fw-bold" style={{ color: darkPurple }}>Our Locations:</h3>
-                                <p className="text-muted">We have a base in Gauteng and provide seasonal mobile support in Limpopo.</p>
-                            </div>
-                            <div className="col-md-6">
-                                <ul className="list-group list-group-flush shadow-sm rounded-4 overflow-hidden">
-                                    <li className="list-group-item d-flex justify-content-between align-items-center py-3">
-                                        <div>
-                                            <strong>Gauteng (Germiston)</strong><br/>
-                                            <small className="text-muted">Dikweipi 2 via 510</small>
-                                        </div>
-                                        <span className="badge rounded-pill bg-success">Available Now</span>
-                                    </li>
-                                    <li className="list-group-item d-flex justify-content-between align-items-center py-3">
-                                        <strong>Venda (Limpopo)</strong>
-                                        <span className="badge rounded-pill" style={{backgroundColor: primaryPurple}}>June & Dec Only</span>
-                                    </li>
-                                </ul>
-                            </div>
+                        <div className="text-center mb-5">
+                            <h2 className="fw-bold" style={{ color: darkPurple }}>Booking Policy</h2>
+                            <p className="text-muted">Please read our terms for mobile service below</p>
                         </div>
-                    </div>
-                </section>
 
-                {/* --- TERMS & CONDITIONS SECTION --- */}
-                <section id="terms" className="py-5" style={{ backgroundColor: "#f1f1f1" }}>
-                    <div className="container">
-                        <div className="row justify-content-center">
-                            <div className="col-lg-8">
-                                <div className="p-4 bg-white rounded shadow-sm">
-                                    <h4 className="fw-bold mb-3" style={{ color: darkPurple }}>Terms & Conditions</h4>
-                                    <ul className="small text-muted" style={{ lineHeight: '1.6' }}>
-                                        <li><strong>Service Fee:</strong> The R350 fee covers one full diagnostic session and fault clearing.</li>
-                                        <li><strong>Call-Out Policy:</strong> We come to you; however, a travel fee may apply depending on your distance from our base in Dikweipi 2 via 510.</li>
-                                        <li><strong>Bookings:</strong> Mobile service is subject to availability and must be confirmed via WhatsApp or Phone call.</li>
-                                        <li><strong>Diagnosis Only:</strong> Our service is for electronic diagnostics and resetting. Physical mechanical repairs are charged separately if applicable.</li>
-                                        <li><strong>Payment:</strong> Payment is due immediately upon completion of the diagnostic session.</li>
-                                    </ul>
+                        <div className="row g-4">
+                            {[
+                                {
+                                    title: "Service Fee",
+                                    desc: "R350 covers one full electronic diagnostic session and software fault clearing.",
+                                    icon: "💳"
+                                },
+                                {
+                                    title: "Call-Out Policy",
+                                    desc: "We come to you. A travel fee may apply based on your distance from Dikweipi 2 via 510.",
+                                    icon: "🚗"
+                                },
+                                {
+                                    title: "Diagnosis Only",
+                                    desc: "Fee is for electronic scanning. Physical mechanical repairs or parts are quoted separately.",
+                                    icon: "🔍"
+                                },
+                                {
+                                    title: "Payment Terms",
+                                    desc: "Strictly COD or Instant EFT upon completion of the scan session.",
+                                    icon: "✅"
+                                }
+                            ].map((term, i) => (
+                                <div className="col-md-6 col-lg-3" key={i}>
+                                    <div className="p-4 rounded-4 h-100 border" style={{ backgroundColor: '#fafafa' }}>
+                                        <div className="fs-3 mb-2">{term.icon}</div>
+                                        <h6 className="fw-bold" style={{ color: primaryPurple }}>{term.title}</h6>
+                                        <p className="small text-muted mb-0">{term.desc}</p>
+                                    </div>
                                 </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </section>
