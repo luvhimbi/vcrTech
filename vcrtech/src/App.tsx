@@ -17,7 +17,7 @@ const App = () => {
             {/* --- MOBILE QUICK-CALL BAR --- */}
             <div className="d-lg-none bg-dark text-white text-center py-2 sticky-top" style={{ zIndex: 1100, fontSize: '0.85rem' }}>
                 <a href={`tel:${waNumber}`} className="text-white text-decoration-none fw-bold">
-                    📞 Tap to Call: {phoneDisplay}
+                    <i className="bi bi-telephone-fill me-2"></i> Tap to Call: {phoneDisplay}
                 </a>
             </div>
 
@@ -40,7 +40,7 @@ const App = () => {
                                 <a className="btn text-white rounded-pill px-4 ms-lg-3 fw-bold shadow-sm w-100"
                                    href={waLink} target="_blank" rel="noopener noreferrer"
                                    style={{ backgroundColor: whatsappGreen, border: 'none' }}>
-                                    WhatsApp Us
+                                    <i className="bi bi-whatsapp me-2"></i> WhatsApp Us
                                 </a>
                             </li>
                         </ul>
@@ -55,7 +55,7 @@ const App = () => {
                         <div className="row align-items-center g-4 flex-column-reverse flex-lg-row">
                             <div className="col-lg-6 text-center text-lg-start">
                                 <div className="d-inline-flex align-items-center badge mb-3 px-3 py-2 fw-bold text-uppercase" style={{ backgroundColor: primaryPurple }}>
-                                    📍 Gauteng & Limpopo
+                                    <i className="bi bi-geo-alt-fill me-2"></i> Gauteng & Limpopo
                                 </div>
                                 <h1 className="display-4 fw-black mb-3" style={{ color: darkPurple }}>Mobile Car Diagnostics & Scanning.</h1>
                                 <p className="lead mb-4 text-muted fs-5">Professional vehicle fault clearing at your doorstep. Based in <strong>Dikweipi 2 via 510, Germiston</strong>, visiting <strong>Venda</strong> during June & December.</p>
@@ -65,13 +65,15 @@ const App = () => {
                                     <a href={`tel:${waNumber}`} className="btn btn-outline-dark btn-lg px-lg-5 py-3 rounded-pill d-lg-none">Call Now</a>
                                 </div>
                             </div>
-                            <div className="col-lg-6 text-center">
-                                <img
-                                    src="/assets/main.jfif"
-                                    alt="Car Diagnostic Scanning"
-                                    className="img-fluid rounded-4 shadow-lg border border-white border-4"
-                                    style={{ aspectRatio: '4/3', objectFit: 'cover', width: '100%', maxHeight: '350px' }}
-                                />
+                            <div className="col-lg-6">
+                                <div className="position-relative px-2 text-center">
+                                    <img
+                                        src="/assets/main.jfif"
+                                        alt="Car Diagnostic Scanning"
+                                        className="img-fluid rounded-4 shadow-lg border border-white border-4"
+                                        style={{ aspectRatio: '4/3', objectFit: 'cover', width: '100%', maxHeight: '350px' }}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -80,7 +82,7 @@ const App = () => {
                 {/* --- LOCATION ALERT BAR --- */}
                 <div className="bg-warning py-3 text-center shadow-sm">
                     <div className="container fw-bold">
-                        🚀 Venda (Limpopo) Bookings Open for June & December!
+                        <i className="bi bi-rocket-takeoff-fill me-2"></i> Venda (Limpopo) Bookings Open for June & December!
                     </div>
                 </div>
 
@@ -94,16 +96,16 @@ const App = () => {
 
                         <div className="row g-3">
                             {[
-                                { title: "Full Car Scan", icon: "💻" },
-                                { title: "Oil Reset", icon: "💧" },
-                                { title: "Brake Reset", icon: "🛑" },
-                                { title: "Fault Clearing", icon: "🛠️" },
-                                { title: "Diesel Specialist", icon: "⚙️" },
-                                { title: "Calibration", icon: "📈" }
+                                { title: "Full Car Scan", icon: "bi-laptop" },
+                                { title: "Oil Reset", icon: "bi-droplet-fill" },
+                                { title: "Brake Reset", icon: "bi-exclamation-octagon-fill" },
+                                { title: "Fault Clearing", icon: "bi-tools" },
+                                { title: "Diesel Specialist", icon: "bi-gear-wide-connected" },
+                                { title: "Calibration", icon: "bi-graph-up-arrow" }
                             ].map((service, index) => (
                                 <div className="col-6 col-md-4" key={index}>
                                     <div className="card h-100 border-0 shadow-sm p-3 text-center hover-card">
-                                        <div className="fs-2 mb-2">{service.icon}</div>
+                                        <div className="fs-2 mb-2" style={{ color: primaryPurple }}><i className={`bi ${service.icon}`}></i></div>
                                         <h6 className="fw-bold mb-0" style={{ color: primaryPurple }}>{service.title}</h6>
                                     </div>
                                 </div>
@@ -126,10 +128,10 @@ const App = () => {
                                         <p className="text-muted mb-4 fw-bold small text-uppercase tracking-widest">Per Session</p>
                                         <p className="mb-4 lead">Professional Mobile Service</p>
                                         <ul className="list-unstyled text-start mb-5 mx-auto" style={{ maxWidth: '350px' }}>
-                                            <li className="mb-2 fs-5">✅ Full System Scan</li>
-                                            <li className="mb-2 fs-5">✅ Fault Code Clearing</li>
-                                            <li className="mb-2 fs-5">✅ Oil & Brake Resets</li>
-                                            <li className="mb-2 fs-5">✅ Detailed Fault Report</li>
+                                            <li className="mb-2 fs-5"><i className="bi bi-check-circle-fill text-success me-2"></i> Full System Scan</li>
+                                            <li className="mb-2 fs-5"><i className="bi bi-check-circle-fill text-success me-2"></i> Fault Code Clearing</li>
+                                            <li className="mb-2 fs-5"><i className="bi bi-check-circle-fill text-success me-2"></i> Oil & Brake Resets</li>
+                                            <li className="mb-2 fs-5"><i className="bi bi-check-circle-fill text-success me-2"></i> Detailed Fault Report</li>
                                         </ul>
                                         <a href={waLink} className="btn btn-dark w-100 py-3 fw-bold rounded-pill btn-lg shadow">
                                             Book via WhatsApp
@@ -141,7 +143,7 @@ const App = () => {
                     </div>
                 </section>
 
-                {/* --- NEW DESIGNED TERMS & CONDITIONS --- */}
+                {/* --- BOOKING POLICY --- */}
                 <section id="terms" className="py-5 bg-white border-top">
                     <div className="container">
                         <div className="text-center mb-5">
@@ -154,27 +156,27 @@ const App = () => {
                                 {
                                     title: "Service Fee",
                                     desc: "R350 covers one full electronic diagnostic session and software fault clearing.",
-                                    icon: "💳"
+                                    icon: "bi-credit-card-fill"
                                 },
                                 {
                                     title: "Call-Out Policy",
                                     desc: "We come to you. A travel fee may apply based on your distance from Dikweipi 2 via 510.",
-                                    icon: "🚗"
+                                    icon: "bi-geo-fill"
                                 },
                                 {
                                     title: "Diagnosis Only",
                                     desc: "Fee is for electronic scanning. Physical mechanical repairs or parts are quoted separately.",
-                                    icon: "🔍"
+                                    icon: "bi-search"
                                 },
                                 {
                                     title: "Payment Terms",
                                     desc: "Strictly COD or Instant EFT upon completion of the scan session.",
-                                    icon: "✅"
+                                    icon: "bi-shield-check"
                                 }
                             ].map((term, i) => (
                                 <div className="col-md-6 col-lg-3" key={i}>
                                     <div className="p-4 rounded-4 h-100 border" style={{ backgroundColor: '#fafafa' }}>
-                                        <div className="fs-3 mb-2">{term.icon}</div>
+                                        <div className="fs-3 mb-2" style={{ color: primaryPurple }}><i className={`bi ${term.icon}`}></i></div>
                                         <h6 className="fw-bold" style={{ color: primaryPurple }}>{term.title}</h6>
                                         <p className="small text-muted mb-0">{term.desc}</p>
                                     </div>
