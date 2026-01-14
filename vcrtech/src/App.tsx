@@ -8,7 +8,7 @@ const App = () => {
     // Contact Details
     const waNumber = "27786115645";
     const phoneDisplay = "078 611 5645";
-    const waMessage = encodeURIComponent("Hi VCR Diesel Tech, I would like to book a mobile diagnostic scan (R350 per session).");
+    const waMessage = encodeURIComponent("Hi VCR Diesel Tech, I would like to book a mobile diagnostic scan (R350) and check for add-on services (R50).");
     const waLink = `https://wa.me/${waNumber}?text=${waMessage}`;
 
     return (
@@ -96,17 +96,18 @@ const App = () => {
 
                         <div className="row g-3">
                             {[
-                                { title: "Full Car Scan", icon: "bi-laptop" },
-                                { title: "Oil Reset", icon: "bi-droplet-fill" },
-                                { title: "Brake Reset", icon: "bi-exclamation-octagon-fill" },
-                                { title: "Fault Clearing", icon: "bi-tools" },
-                                { title: "Diesel Specialist", icon: "bi-gear-wide-connected" },
-                                { title: "Calibration", icon: "bi-graph-up-arrow" }
+                                { title: "Full Car Scan", icon: "bi-laptop", price: "R350" },
+                                { title: "Oil Reset", icon: "bi-droplet-fill", price: "R50" },
+                                { title: "Brake Reset", icon: "bi-exclamation-octagon-fill", price: "R50" },
+                                { title: "Fault Clearing", icon: "bi-tools", price: "R50" },
+                                { title: "SAS Calibration", icon: "bi-gear-wide-connected", price: "R50" },
+                                { title: "Battery Coding", icon: "bi-battery-full", price: "R50" }
                             ].map((service, index) => (
                                 <div className="col-6 col-md-4" key={index}>
                                     <div className="card h-100 border-0 shadow-sm p-3 text-center hover-card">
                                         <div className="fs-2 mb-2" style={{ color: primaryPurple }}><i className={`bi ${service.icon}`}></i></div>
                                         <h6 className="fw-bold mb-0" style={{ color: primaryPurple }}>{service.title}</h6>
+                                        <div className="fw-bold mt-1 text-dark small">{service.price}</div>
                                     </div>
                                 </div>
                             ))}
@@ -121,17 +122,17 @@ const App = () => {
                             <div className="col-12 col-md-10 col-lg-7">
                                 <div className="card border-0 shadow-lg rounded-4 overflow-hidden">
                                     <div className="py-4 text-white" style={{ backgroundColor: primaryPurple }}>
-                                        <h4 className="fw-bold mb-0">Full Diagnostic Package</h4>
+                                        <h4 className="fw-bold mb-0">Transparent Pricing</h4>
                                     </div>
                                     <div className="card-body p-4 p-lg-5">
                                         <div className="display-4 fw-black mb-1" style={{ color: darkPurple }}>R350</div>
-                                        <p className="text-muted mb-4 fw-bold small text-uppercase tracking-widest">Per Session</p>
-                                        <p className="mb-4 lead">Professional Mobile Service</p>
+                                        <p className="text-muted mb-4 fw-bold small text-uppercase tracking-widest">Base Diagnosis Session</p>
+                                        <p className="mb-4 lead">R50 per additional service add-on</p>
                                         <ul className="list-unstyled text-start mb-5 mx-auto" style={{ maxWidth: '350px' }}>
-                                            <li className="mb-2 fs-5"><i className="bi bi-check-circle-fill text-success me-2"></i> Full System Scan</li>
-                                            <li className="mb-2 fs-5"><i className="bi bi-check-circle-fill text-success me-2"></i> Fault Code Clearing</li>
-                                            <li className="mb-2 fs-5"><i className="bi bi-check-circle-fill text-success me-2"></i> Oil & Brake Resets</li>
-                                            <li className="mb-2 fs-5"><i className="bi bi-check-circle-fill text-success me-2"></i> Detailed Fault Report</li>
+                                            <li className="mb-2 fs-5"><i className="bi bi-check-circle-fill text-success me-2"></i> Full System Scan (Base)</li>
+                                            <li className="mb-2 fs-5"><i className="bi bi-plus-circle-fill text-primary me-2"></i> Fault Clearing (+R50)</li>
+                                            <li className="mb-2 fs-5"><i className="bi bi-plus-circle-fill text-primary me-2"></i> Oil & Brake Resets (+R50)</li>
+                                            <li className="mb-2 fs-5"><i className="bi bi-plus-circle-fill text-primary me-2"></i> Special Calibrations (+R50)</li>
                                         </ul>
                                         <a href={waLink} className="btn btn-dark w-100 py-3 fw-bold rounded-pill btn-lg shadow">
                                             Book via WhatsApp
@@ -155,7 +156,7 @@ const App = () => {
                             {[
                                 {
                                     title: "Service Fee",
-                                    desc: "R350 covers one full electronic diagnostic session and software fault clearing.",
+                                    desc: "R350 base fee for diagnosis. Additional resets or calibrations are charged at R50 per task.",
                                     icon: "bi-credit-card-fill"
                                 },
                                 {
@@ -165,7 +166,7 @@ const App = () => {
                                 },
                                 {
                                     title: "Diagnosis Only",
-                                    desc: "Fee is for electronic scanning. Physical mechanical repairs or parts are quoted separately.",
+                                    desc: "Fee is for electronic scanning and resets. Physical mechanical repairs or parts are separate.",
                                     icon: "bi-search"
                                 },
                                 {
