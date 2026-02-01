@@ -1,9 +1,12 @@
+
+
 const App = () => {
     // Custom Brand Colors
-    const primaryPurple = "#6f42c1";
-    const lightPurple = "#f8f5ff";
-    const darkPurple = "#4b2889";
+    const primaryPurple = "#5a2ca5"; // Deeper, more professional purple
+    const lightPurple = "#f9f8ff";
+    const darkPurple = "#1e0e3d";
     const whatsappGreen = "#25D366";
+    const alertRed = "#dc3545";
 
     // Contact Details
     const waNumber = "27786115645";
@@ -12,102 +15,131 @@ const App = () => {
     const waLink = `https://wa.me/${waNumber}?text=${waMessage}`;
 
     return (
-        <div style={{ fontFamily: "'Poppins', sans-serif", scrollBehavior: 'smooth' }}>
+        <div style={{ fontFamily: "'Inter', sans-serif", scrollBehavior: 'smooth', color: '#333' }}>
 
-            {/* --- MOBILE QUICK-CALL BAR --- */}
-            <div className="d-lg-none bg-dark text-white text-center py-2 sticky-top" style={{ zIndex: 1100, fontSize: '0.85rem' }}>
-                <a href={`tel:${waNumber}`} className="text-white text-decoration-none fw-bold">
-                    <i className="bi bi-telephone-fill me-2"></i> Tap to Call: {phoneDisplay}
-                </a>
+            {/* --- FLOATING WHATSAPP ACTION --- */}
+            <a href={waLink}
+               target="_blank"
+               rel="noopener noreferrer"
+               className="floating-wa shadow-lg d-flex align-items-center justify-content-center text-decoration-none"
+               style={{ backgroundColor: whatsappGreen }}>
+                <i className="bi bi-whatsapp text-white fs-2"></i>
+            </a>
+
+            {/* --- TOP ANNOUNCEMENT BAR --- */}
+            <div className="bg-dark text-white py-2 sticky-top border-bottom border-secondary" style={{ zIndex: 1100, fontSize: '0.8rem' }}>
+                <div className="container d-flex justify-content-between align-items-center">
+                    <span><i className="bi bi-geo-alt me-1"></i> Serving Gauteng & Limpopo</span>
+                    <a href={`tel:${waNumber}`} className="text-white text-decoration-none fw-bold">
+                        <i className="bi bi-telephone-fill me-1"></i> {phoneDisplay}
+                    </a>
+                </div>
             </div>
 
             {/* --- NAVBAR --- */}
-            <nav className="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm py-2">
+            <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
                 <div className="container">
-                    <a className="navbar-brand fw-black d-flex align-items-center" href="/" style={{ color: primaryPurple }}>
-                        <span className="text-white px-2 rounded me-2" style={{ backgroundColor: primaryPurple }}>VCR</span>
-                        <span className="tracking-widest" style={{ fontSize: '0.9rem' }}>DIESEL TECH</span>
+                    <a className="navbar-brand d-flex align-items-center" href="/">
+                        <div className="fw-black text-white px-3 py-1 rounded-2 me-2" style={{ backgroundColor: primaryPurple, letterSpacing: '-1px' }}>VCR</div>
+                        <div className="d-flex flex-column" style={{ lineHeight: '1' }}>
+                            <span className="fw-bold small tracking-widest text-dark">DIESEL TECH</span>
+                            <span className="text-muted" style={{ fontSize: '0.6rem' }}>MOBILE DIAGNOSTICS</span>
+                        </div>
                     </a>
-                    <button className="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav ms-auto align-items-center pt-3 pt-lg-0">
-                            <li className="nav-item w-100 text-center"><a className="nav-link" href="#home">Home</a></li>
-                            <li className="nav-item w-100 text-center"><a className="nav-link" href="#services">Services</a></li>
-                            <li className="nav-item w-100 text-center"><a className="nav-link" href="#pricing">Pricing</a></li>
-                            <li className="nav-item w-100 mt-2 mt-lg-0">
-                                <a className="btn text-white rounded-pill px-4 ms-lg-3 fw-bold shadow-sm w-100"
-                                   href={waLink} target="_blank" rel="noopener noreferrer"
-                                   style={{ backgroundColor: whatsappGreen, border: 'none' }}>
-                                    <i className="bi bi-whatsapp me-2"></i> WhatsApp Us
-                                </a>
+                        <ul className="navbar-nav ms-auto align-items-center fw-semibold">
+                            <li className="nav-item mx-lg-3"><a className="nav-link" href="#home">Home</a></li>
+                            <li className="nav-item mx-lg-3"><a className="nav-link" href="#services">Services</a></li>
+                            <li className="nav-item mx-lg-3"><a className="nav-link" href="#pricing">Pricing</a></li>
+                            <li className="nav-item ms-lg-3">
+                                <a className="btn btn-dark rounded-pill px-4 btn-sm" href={waLink}>Book Now</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
 
-            <main id="main-content">
+            <main>
                 {/* --- HERO SECTION --- */}
-                <header id="home" className="py-4 py-lg-5" style={{ backgroundColor: lightPurple }}>
+                <header id="home" className="py-5 border-bottom" style={{ backgroundColor: lightPurple }}>
                     <div className="container py-lg-5">
-                        <div className="row align-items-center g-4 flex-column-reverse flex-lg-row">
-                            <div className="col-lg-6 text-center text-lg-start">
-                                <div className="d-inline-flex align-items-center badge mb-3 px-3 py-2 fw-bold text-uppercase" style={{ backgroundColor: primaryPurple }}>
-                                    <i className="bi bi-geo-alt-fill me-2"></i> Gauteng & Limpopo
-                                </div>
-                                <h1 className="display-4 fw-black mb-3" style={{ color: darkPurple }}>Mobile Car Diagnostics & Scanning.</h1>
-                                <p className="lead mb-4 text-muted fs-5">Professional vehicle fault clearing at your doorstep. Based in <strong>Dikweipi 2 via 510, Germiston</strong>, visiting <strong>Venda</strong> during June & December.</p>
-
-                                <div className="d-grid d-lg-flex gap-2">
-                                    <a href={waLink} className="btn btn-lg px-lg-5 py-3 fw-bold rounded-pill text-white shadow" style={{ backgroundColor: primaryPurple }}>Book a Scan</a>
-                                    <a href={`tel:${waNumber}`} className="btn btn-outline-dark btn-lg px-lg-5 py-3 rounded-pill d-lg-none">Call Now</a>
+                        <div className="row align-items-center g-5">
+                            <div className="col-lg-7">
+                                <h1 className="display-4 fw-black mb-3" style={{ color: darkPurple }}>
+                                    Precision Mobile <span style={{ color: primaryPurple }}>Diagnostics.</span>
+                                </h1>
+                                <p className="lead text-muted mb-4 border-start border-4 ps-3" style={{ borderColor: primaryPurple }}>
+                                    Expert electronic scanning and fault clearing at your location.
+                                    <span className="d-block mt-2 fw-bold text-dark">
+                                        <i className="bi bi-info-circle-fill text-primary me-2"></i>
+                                        Specializing in identification & resets. We do not perform mechanical repairs.
+                                    </span>
+                                </p>
+                                <div className="d-flex flex-wrap gap-3">
+                                    <a href={waLink} className="btn btn-primary btn-lg px-5 py-3 rounded-2 shadow-sm fw-bold" style={{ backgroundColor: primaryPurple, border: 'none' }}>
+                                        Request Scan Session
+                                    </a>
+                                    <div className="d-flex align-items-center px-3 border rounded-2 bg-white">
+                                        <span className="small text-muted">Service Location: <strong className="text-dark">Germiston / Venda</strong></span>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="col-lg-6">
-                                <div className="position-relative px-2 text-center">
-                                    <img
-                                        src="/assets/main.jfif"
-                                        alt="Car Diagnostic Scanning"
-                                        className="img-fluid rounded-4 shadow-lg border border-white border-4"
-                                        style={{ aspectRatio: '4/3', objectFit: 'cover', width: '100%', maxHeight: '350px' }}
-                                    />
-                                </div>
+                            <div className="col-lg-5">
+                                <img
+                                    src="/assets/main.jfif"
+                                    alt="Professional Scanner Tool"
+                                    className="img-fluid rounded-4 shadow-lg border border-white border-5"
+                                />
                             </div>
                         </div>
                     </div>
                 </header>
 
-                {/* --- LOCATION ALERT BAR --- */}
-                <div className="bg-warning py-3 text-center shadow-sm">
-                    <div className="container fw-bold">
-                        <i className="bi bi-rocket-takeoff-fill me-2"></i> Venda (Limpopo) Bookings Open for June & December!
+                {/* --- SCOPE DISCLAIMER --- */}
+                <div className="py-3 border-bottom bg-white">
+                    <div className="container">
+                        <div className="row justify-content-center">
+                            <div className="col-md-8 text-center">
+                                <span className="badge rounded-pill px-3 py-2 mb-2" style={{ backgroundColor: '#fff0f0', color: alertRed, border: `1px solid ${alertRed}` }}>
+                                    <i className="bi bi-exclamation-triangle-fill me-2"></i> IMPORTANT SERVICE SCOPE
+                                </span>
+                                <p className="small text-muted mb-0">
+                                    Our mobile unit provides <strong>Electronic Diagnosis & Clearing only</strong>. We provide the data you need to understand your vehicle's health, but we do not supply parts or perform physical mechanical labor.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                {/* --- SERVICES SECTION --- */}
-                <section id="services" className="py-5 bg-white">
-                    <div className="container py-3">
-                        <div className="text-center mb-5">
-                            <h2 className="fw-bold h1" style={{ color: darkPurple }}>Our Services</h2>
-                            <div className="mx-auto mt-2" style={{ width: '50px', height: '4px', backgroundColor: primaryPurple }}></div>
+                {/* --- SERVICES --- */}
+                <section id="services" className="py-5">
+                    <div className="container py-5">
+                        <div className="row mb-5 align-items-end">
+                            <div className="col-md-6">
+                                <h6 className="text-uppercase fw-bold small ls-2" style={{ color: primaryPurple }}>Expertise</h6>
+                                <h2 className="fw-black" style={{ color: darkPurple }}>Electronic Services</h2>
+                            </div>
+                            <div className="col-md-6 text-md-end">
+                                <p className="text-muted small mb-0">R50 per add-on after R350 base diagnosis</p>
+                            </div>
                         </div>
 
-                        <div className="row g-3">
+                        <div className="row g-4">
                             {[
-                                { title: "Full Car Scan", icon: "bi-laptop", price: "R350" },
-                                { title: "Oil Reset", icon: "bi-droplet-fill", price: "R50" },
-                                { title: "Brake Reset", icon: "bi-exclamation-octagon-fill", price: "R50" },
-                                { title: "Fault Clearing", icon: "bi-tools", price: "R50" },
-                                { title: "SAS Calibration", icon: "bi-gear-wide-connected", price: "R50" },
-                                { title: "Battery Coding", icon: "bi-battery-full", price: "R50" }
+                                { title: "Comprehensive Scan", icon: "bi-search", desc: "Full system health report" },
+                                { title: "Oil Life Reset", icon: "bi-droplet", desc: "Post-service interval reset" },
+                                { title: "Brake Service Reset", icon: "bi-stop-circle", desc: "Electronic parking brake resets" },
+                                { title: "Fault Code Clearing", icon: "bi-trash3", desc: "Erase stored error logs" },
+                                { title: "Battery Coding", icon: "bi-battery-charging", desc: "Register new battery installs" }
                             ].map((service, index) => (
-                                <div className="col-6 col-md-4" key={index}>
-                                    <div className="card h-100 border-0 shadow-sm p-3 text-center hover-card">
-                                        <div className="fs-2 mb-2" style={{ color: primaryPurple }}><i className={`bi ${service.icon}`}></i></div>
-                                        <h6 className="fw-bold mb-0" style={{ color: primaryPurple }}>{service.title}</h6>
-                                        <div className="fw-bold mt-1 text-dark small">{service.price}</div>
+                                <div className="col-md-4" key={index}>
+                                    <div className="card h-100 border-0 shadow-sm p-4 hover-lift border-start border-4" style={{ borderLeftColor: primaryPurple + ' !important' }}>
+                                        <div className="mb-3 text-primary"><i className={`bi ${service.icon} fs-4`}></i></div>
+                                        <h5 className="fw-bold mb-2">{service.title}</h5>
+                                        <p className="small text-muted mb-0">{service.desc}</p>
                                     </div>
                                 </div>
                             ))}
@@ -115,27 +147,46 @@ const App = () => {
                     </div>
                 </section>
 
-                {/* --- PRICING SECTION --- */}
-                <section id="pricing" className="py-5" style={{ backgroundColor: lightPurple }}>
-                    <div className="container">
-                        <div className="row justify-content-center text-center">
-                            <div className="col-12 col-md-10 col-lg-7">
-                                <div className="card border-0 shadow-lg rounded-4 overflow-hidden">
-                                    <div className="py-4 text-white" style={{ backgroundColor: primaryPurple }}>
-                                        <h4 className="fw-bold mb-0">Transparent Pricing</h4>
-                                    </div>
-                                    <div className="card-body p-4 p-lg-5">
-                                        <div className="display-4 fw-black mb-1" style={{ color: darkPurple }}>R350</div>
-                                        <p className="text-muted mb-4 fw-bold small text-uppercase tracking-widest">Base Diagnosis Session</p>
-                                        <p className="mb-4 lead">R50 per additional service add-on</p>
-                                        <ul className="list-unstyled text-start mb-5 mx-auto" style={{ maxWidth: '350px' }}>
-                                            <li className="mb-2 fs-5"><i className="bi bi-check-circle-fill text-success me-2"></i> Full System Scan (Base)</li>
-                                            <li className="mb-2 fs-5"><i className="bi bi-plus-circle-fill text-primary me-2"></i> Fault Clearing (+R50)</li>
-                                            <li className="mb-2 fs-5"><i className="bi bi-plus-circle-fill text-primary me-2"></i> Oil & Brake Resets (+R50)</li>
-                                            <li className="mb-2 fs-5"><i className="bi bi-plus-circle-fill text-primary me-2"></i> Special Calibrations (+R50)</li>
-                                        </ul>
-                                        <a href={waLink} className="btn btn-dark w-100 py-3 fw-bold rounded-pill btn-lg shadow">
-                                            Book via WhatsApp
+                {/* --- PRICING --- */}
+                <section id="pricing" className="py-5" style={{ backgroundColor: '#111' }}>
+                    <div className="container py-5">
+                        <div className="row justify-content-center">
+                            <div className="col-lg-5 text-white pe-lg-5 mb-5 mb-lg-0">
+                                <h2 className="fw-black display-5 mb-4">Flat Rate <br/>Pricing.</h2>
+                                <p className="text-white-50 lead">We believe in transparent, upfront costs with no hidden fees for our mobile diagnostic sessions.</p>
+                                <hr className="border-secondary my-4" style={{ width: '50px' }} />
+                                <div className="d-flex align-items-center mb-3">
+                                    <i className="bi bi-check-lg text-success me-3"></i>
+                                    <span>Home or Office Call-outs</span>
+                                </div>
+                                <div className="d-flex align-items-center">
+                                    <i className="bi bi-check-lg text-success me-3"></i>
+                                    <span>Detailed Electronic Reports</span>
+                                </div>
+                            </div>
+                            <div className="col-lg-5">
+                                <div className="card border-0 rounded-4 overflow-hidden shadow-lg">
+                                    <div className="card-body p-5">
+                                        <h6 className="text-uppercase fw-bold text-muted small">Standard Session</h6>
+                                        <div className="d-flex align-items-center mb-4">
+                                            <span className="display-4 fw-black">R350</span>
+                                            <span className="ms-2 text-muted">/ Base Fee</span>
+                                        </div>
+                                        <div className="p-3 rounded-3 mb-4" style={{ backgroundColor: lightPurple }}>
+                                            <p className="small mb-0 text-dark"><strong>Includes:</strong> Full System Scan + Primary Fault Identification.</p>
+                                        </div>
+                                        <div className="mb-5">
+                                            <div className="d-flex justify-content-between border-bottom py-2">
+                                                <span className="small">Additional Resets</span>
+                                                <span className="fw-bold">+R50</span>
+                                            </div>
+                                            <div className="d-flex justify-content-between border-bottom py-2">
+                                                <span className="small">Additional Codings</span>
+                                                <span className="fw-bold">+R50</span>
+                                            </div>
+                                        </div>
+                                        <a href={waLink} className="btn btn-dark w-100 py-3 fw-bold rounded-2">
+                                            Book Mobile Visit
                                         </a>
                                     </div>
                                 </div>
@@ -144,43 +195,19 @@ const App = () => {
                     </div>
                 </section>
 
-                {/* --- BOOKING POLICY --- */}
-                <section id="terms" className="py-5 bg-white border-top">
+                {/* --- POLICY --- */}
+                <section className="py-5 bg-white">
                     <div className="container">
-                        <div className="text-center mb-5">
-                            <h2 className="fw-bold" style={{ color: darkPurple }}>Booking Policy</h2>
-                            <p className="text-muted">Please read our terms for mobile service below</p>
-                        </div>
-
                         <div className="row g-4">
                             {[
-                                {
-                                    title: "Service Fee",
-                                    desc: "R350 base fee for diagnosis. Additional resets or calibrations are charged at R50 per task.",
-                                    icon: "bi-credit-card-fill"
-                                },
-                                {
-                                    title: "Call-Out Policy",
-                                    desc: "We come to you. A travel fee may apply based on your distance from Dikweipi 2 via 510.",
-                                    icon: "bi-geo-fill"
-                                },
-                                {
-                                    title: "Diagnosis Only",
-                                    desc: "Fee is for electronic scanning and resets. Physical mechanical repairs or parts are separate.",
-                                    icon: "bi-search"
-                                },
-                                {
-                                    title: "Payment Terms",
-                                    desc: "Strictly COD or Instant EFT upon completion of the scan session.",
-                                    icon: "bi-shield-check"
-                                }
-                            ].map((term, i) => (
-                                <div className="col-md-6 col-lg-3" key={i}>
-                                    <div className="p-4 rounded-4 h-100 border" style={{ backgroundColor: '#fafafa' }}>
-                                        <div className="fs-3 mb-2" style={{ color: primaryPurple }}><i className={`bi ${term.icon}`}></i></div>
-                                        <h6 className="fw-bold" style={{ color: primaryPurple }}>{term.title}</h6>
-                                        <p className="small text-muted mb-0">{term.desc}</p>
-                                    </div>
+                                { title: "Mobile Service", desc: "Travel fees apply based on distance from Germiston base.", icon: "bi-map" },
+                                { title: "Diagnosis Only", desc: "Our tools identify faults. We do not offer mechanical repair labor.", icon: "bi-info-square" },
+                                { title: "Payment", desc: "Payment is required via Cash or Instant EFT upon session completion.", icon: "bi-cash-stack" }
+                            ].map((p, i) => (
+                                <div className="col-md-4 text-center px-4" key={i}>
+                                    <i className={`bi ${p.icon} fs-2 mb-3 d-block`} style={{ color: primaryPurple }}></i>
+                                    <h6 className="fw-bold">{p.title}</h6>
+                                    <p className="small text-muted">{p.desc}</p>
                                 </div>
                             ))}
                         </div>
@@ -188,31 +215,44 @@ const App = () => {
                 </section>
             </main>
 
-            {/* --- FOOTER --- */}
-            <footer className="py-5 text-center bg-dark text-white-50">
-                <div className="container">
-                    <h5 className="text-white fw-bold mb-2">VCR DIESEL TECH</h5>
-                    <p className="small mb-4">Precision diagnostics for petrol and diesel engines.</p>
-                    <hr className="my-4 opacity-25 border-white mx-auto" style={{maxWidth: '200px'}} />
-                    <p className="m-0 small">&copy; 2026 VCR Diesel Tech. All Rights Reserved.</p>
-                    <p className="mt-3 mb-0" style={{ fontSize: '0.7rem', letterSpacing: '1.5px', color: '#aaa' }}>
-                        DEVELOPED BY <span className="text-white fw-bold">LUVHIMBIDIGITALS</span>
+            <footer className="py-5 bg-white border-top">
+                <div className="container text-center">
+                    <p className="small text-muted mb-0">&copy; 2026 VCR Diesel Tech. All Rights Reserved.</p>
+                    <p className="fw-bold mt-2" style={{ fontSize: '0.6rem', letterSpacing: '2px', color: '#bbb' }}>
+                        PLATFORM BY <span className="text-dark">LUVHIMBIDIGITALS</span>
                     </p>
                 </div>
             </footer>
 
             <style>{`
+                @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+                
                 .fw-black { font-weight: 900; }
-                .tracking-widest { letter-spacing: 0.1em; }
-                .hover-card { transition: all 0.3s ease; border: 1px solid transparent !important; }
-                .hover-card:hover { 
-                    transform: translateY(-5px); 
-                    box-shadow: 0 10px 20px rgba(111, 66, 193, 0.1) !important;
-                    border-color: #6f42c1 !important;
+                .ls-2 { letter-spacing: 2px; }
+                
+                .floating-wa {
+                    position: fixed;
+                    bottom: 30px;
+                    right: 30px;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    z-index: 2000;
+                    transition: all 0.3s ease;
                 }
+                .floating-wa:hover { transform: scale(1.1); box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4); }
+
+                .hover-lift {
+                    transition: transform 0.2s ease, box-shadow 0.2s ease;
+                }
+                .hover-lift:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important;
+                }
+
                 @media (max-width: 768px) {
-                    .display-4 { font-size: 2rem; }
-                    .navbar-brand { font-size: 1rem; }
+                    .display-4 { font-size: 2.5rem; }
+                    .floating-wa { bottom: 20px; right: 20px; width: 50px; height: 50px; }
                 }
             `}</style>
         </div>
